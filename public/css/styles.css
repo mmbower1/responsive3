@@ -26,6 +26,10 @@ footer.page-footer {
     color: #26a69a;
 }
 
+.parallex {
+    width: 50px;
+}
+
 .parallax-container {
     color: rgba(255,255,255,.9);
     height: auto;
