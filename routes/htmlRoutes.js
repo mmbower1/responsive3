@@ -8,4 +8,8 @@ module.exports = function() {
     app.get("/home", function(req, res) {
         res.sendFile(path.join(__dirname, "../public/home.html"));
     });
+
+    app.get("/portfolio", function(req, res) {
+        res.sendFile(path.join(__dirname, "../public/portfolio.html"));
+    });
 }

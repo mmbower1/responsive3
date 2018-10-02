@@ -22,10 +22,6 @@ footer.page-footer {
     font-size: inherit;
 }
 
-.sidenav-trigger {
-    color: #26a69a;
-}
-
 .parallex {
     width: 50px;
 }
@@ -39,6 +35,10 @@ footer.page-footer {
 
 .parallax-container .section {
     width: 100%;
+}
+
+.sidenav-trigger {
+    color: #26a69a;
 }
 
 @media only screen and (max-width : 992px) {

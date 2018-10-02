@@ -7,4 +7,10 @@
     }); // end of document ready
 })(jQuery); // end of jQuery name space
 
-$('.dropdown-trigger').dropdown();
+$(document).ready(function() {
+
+    $('.dropdown-trigger').dropdown();
+    $(".slider").slider();
+
+}); 
+
