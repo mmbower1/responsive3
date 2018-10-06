@@ -7,6 +7,7 @@
     <title>MB News Page</title>
 
     <!-- Add icon library -->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -23,20 +24,58 @@
             <ul id="dropdown1" class="right hide-on-med-and-down">
                 <li><a class="hoverable" href="./home.html">Home</a></li>
                 <li><a class="hoverable" href="./portfolio.html">Portfolio</a></li>
-                <li><a class="hoverable" href="#">Contact</a></li>
+                <li><a class="hoverable" href="#contact">Contact</a></li>
             </ul>
             <ul id="nav-mobile" class="sidenav">
                 <li><a href="./home.html">Home</a></li>
                 <li><a href="./portfolio.html">Portfolio</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
             <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         </div>
     </nav>
 
-    <div class=ajax-row>
         <div id="nbc-div">Display NBC News here</div>
-    </div>
+        <div id="nfl-div">Display NFL News here</div>
+
+    <!-- Footer -->
+    <footer id="contact" class="page-footer teal">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Contact:</h5>
+                    <p class="grey-text text-lighten-4">
+                        Lets talk. I'm always excited for new ideas and new opportunities. So, hit me up with an email
+                        or just say hello!</p>
+                </div>
+                <div class="col l3 s12">
+                    <h5 class="white-text">Links:</h5>
+                    <ul>
+                        <li><a class="white-text" href="#!">mttbwr91@gmail.com</a></li>
+                        <li><a class="white-text" href="#!">Linkedin</a></li>
+                        <li><a class="white-text" href="#!">Github</a></li>
+                        <li><a class="white-text" href="#!">Instagram</a></li>
+                        <li><a class="white-text" href="#!">Youtube</a></li>
+                    </ul>
+                </div>
+                <div class="col l3 s12">
+                    <h5 class="white-text">Thanks!</h5>
+                    <ul>
+                        <li><a class="fa fa-google hoverable" href="#"></a></li>
+                        <li><a class="fa fa-linkedin hoverable" href="https://www.linkedin.com/in/matthew-bower-091a2a116/"></a></li>
+                        <li><a class="fa fa-github hoverable" href="https://github.com/mmbower1"></a></li>
+                        <li><a class="fa fa-instagram hoverable" href="https://www.instagram.com/mmbower1/"></a></li>
+                        <li><a class="fa fa-youtube hoverable" href="https://www.youtube.com/channel/UCnIEe_2WcwQd-mZeOyVOWzA?view_as=subscriber"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © Matthew Bower 2018. Made with <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+            </div>
+        </div>
+    </footer>
 
     <script type="text/javascript">
 
@@ -44,36 +83,30 @@
 
         // constructing a queryURL variable to use instead of the literal string inside 
         // of the ajax method
-        function searchNBC() {
 
-            var title = "nbc+news";
-            var queryURL = "http://newsapi.org/v2/top-headlines?country=us&apikey=ff06bd964fec4e12b2a54d3a24cbe1c4";
+        var title = "nbc+news";
+        var queryURL = "http://newsapi.org/v2/top-headlines?country=us&apikey=ff06bd964fec4e12b2a54d3a24cbe1c4";
 
-            $.ajax({
-                url: queryURL,
-                method: "GET"
-            }).then(function (response) {
-                console.log(response);
-                console.log(response.articles);
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            console.log(response);
+            console.log(response.articles);
 
-                for (var i = 0; i < response.length; i++) {
-                    console.log("test");
+            for (var i = 0; i < response.articles.length; i++) {
+                var article = response.articles[i];
+                var nbcArticleDiv = $("<div>");
+                var nbcImage = $("<img>");
+                nbcImage.attr("src", article.urlToImage);
+                nbcArticleDiv.append(nbcImage);
+                
+                console.log("hello")
+                $("#nbc-div").append(nbcArticleDiv);
+                
+            };
 
-                    //nbcNews.append(response.articles[i].title.urlToImage);
-                    var title = (response.articles[i].title);
-                    var image = (response.articles[i].urlToImage);
-                    var url = (response.articles[i].url);
-                    var myObject = {
-                        myTitle: title,
-                        myImage: image,
-                        myUrl: url
-                    };
-                    myObject.push(myRequest);
-                };
-                console.log("test" + myRequest);
-            });
-        }
-        searchNBC();
+        });
 
     </script>
 
