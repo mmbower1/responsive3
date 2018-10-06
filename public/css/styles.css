@@ -1,6 +1,10 @@
 * Made By MaterializeCSS.com
 */
 
+li {
+    background: teal;
+}
+
 nav ul a,
 nav .brand-logo {
     color: #444;
@@ -10,17 +14,24 @@ p {
     line-height: 2rem;
 }
 
-/* .card {
-    display: inline-block;
-} */
+.card:hover {
+    background-color: teal!important;
+    box-shadow: 50px red;
+}
 
 .fa {
     /* background: teal;
     border: teal;
-    display: no-repeat;
-    color: black; */
-    height: 15px;
-    width: 15px;
+    display: no-repeat; */
+    color: white;
+    height: 20px;
+    width: 2px;
+}
+
+.front-end-row, .back-end-row {
+    margin-left: 15px;
+    margin-top: 10px;
+    font-size: 30px;
 }
 
 footer.page-footer {
@@ -35,8 +46,12 @@ footer.page-footer {
     font-size: inherit;
 }
 
+/* li, .fa {
+    
+} */
+
 .parallex {
-    width: 50px;
+    width: 100px;
 }
 
 .parallax-container {
@@ -51,12 +66,18 @@ footer.page-footer {
     width: 100%;
 }
 
-/* .preloader-wrapper big active {
-    text-align: center;
-} */
-
 .sidenav-trigger {
     color: #26a69a;
+}
+
+.spin {
+    position: absolute;
+    left: 50%;
+    top: 60%;
+}
+
+li, .white-text {
+    margin-top: 5px
 }
 
 @media only screen and (max-width : 992px) {
