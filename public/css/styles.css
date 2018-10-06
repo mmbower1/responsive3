@@ -51,7 +51,7 @@ footer.page-footer {
 } */
 
 .parallex {
-    width: 100px;
+    width: 100%;
 }
 
 .parallax-container {
@@ -62,7 +62,7 @@ footer.page-footer {
     zoom: 100em;
 }
 
-.parallax-container .section {
+.parallax-container, .section {
     width: 100%;
 }
 

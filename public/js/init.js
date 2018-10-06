@@ -1,16 +1,13 @@
-(function ($) {
-    $(function () {
-
-        $('.sidenav').sidenav();
-        $('.parallax').parallax();
-
-    }); // end of document ready
-})(jQuery); // end of jQuery name space
-
 $(document).ready(function() {
-
-    $('.dropdown-trigger').dropdown();
-    $(".slider").slider();
-
+    (function ($) {
+        $(function () {
+            $('.dropdown-trigger').dropdown();
+            $('.parallax').parallax();
+            $('.sidenav').sidenav();
+            $(".slider").slider();
+            $(".icon-section").show();
+    
+        }); // end of document ready
+    })(jQuery); // end of jQuery name space
 }); 
 

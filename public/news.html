@@ -2,19 +2,17 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>MB News</title>
-    <!-- Ajax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MB News Page</title>
 
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="css/styles.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <link rel="stylesheet" href="css/styles.css" type="text/css">
-    <script src="https://code.jquery.com/jquery.js"></script>
 </head>
 
 <body>
@@ -42,9 +40,11 @@
 
     <script type="text/javascript">
 
+        var myRequest = [];
+
         // constructing a queryURL variable to use instead of the literal string inside 
         // of the ajax method
-        function searchNBC(article) {
+        function searchNBC() {
 
             var title = "nbc+news";
             var queryURL = "http://newsapi.org/v2/top-headlines?country=us&apikey=ff06bd964fec4e12b2a54d3a24cbe1c4";
@@ -54,11 +54,26 @@
                 method: "GET"
             }).then(function (response) {
                 console.log(response);
-                console.log(response.Runtime);
+                console.log(response.articles);
 
-                var nbcNews = $("#nbc-div").attr(response);
+                for (var i = 0; i < response.length; i++) {
+                    console.log("test");
+
+                    //nbcNews.append(response.articles[i].title.urlToImage);
+                    var title = (response.articles[i].title);
+                    var image = (response.articles[i].urlToImage);
+                    var url = (response.articles[i].url);
+                    var myObject = {
+                        myTitle: title,
+                        myImage: image,
+                        myUrl: url
+                    };
+                    myObject.push(myRequest);
+                };
+                console.log("test" + myRequest);
             });
         }
+        searchNBC();
 
     </script>
 
