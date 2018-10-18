@@ -50,6 +50,10 @@ footer.page-footer {
     
 } */
 
+.header .center .teal-text .text-lighten-2 {
+    text-shadow: 5px 5px 5px;
+}
+
 .parallex {
     width: 100%;
 }
