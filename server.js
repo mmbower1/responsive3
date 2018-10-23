@@ -3,6 +3,9 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 
+require("./routes/apiRoutes")(app);
+require("./routes/htmlRoutes")(app);
+
 // This sets up the basic properties for our express server
 // Tells node that we are creating an "express" server
 var app = express();
@@ -19,9 +22,4 @@ app.listen(PORT, function () {
     console.log("App listening on PORT: " + PORT);
 });
 
-// The below points our server to a series of "route" files.
-// These routes give our server a "map" of how to respond when users visit or request data from various URLs.
-
-// require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
 app.use(express.static("public"));
