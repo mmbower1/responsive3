@@ -54,6 +54,10 @@ footer.page-footer {
     text-shadow: 5px 5px 5px;
 }
 
+#nbc-div .img{
+    width: 20em;
+}
+
 .parallex {
     width: 100%;
 }

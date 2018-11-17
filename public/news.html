@@ -35,8 +35,9 @@
         </div>
     </nav>
 
-        <div id="nbc-div">Display NBC News</div>
-        <div id="nfl-div">Display Sports News </div>
+    <h3>Click and drag for latest news!!</h3>
+    <!-- Carousel -->
+    <div class="carousel carousel-slider"></div>
 
     <!-- Footer -->
     <footer id="contact" class="page-footer teal">
@@ -46,7 +47,8 @@
                     <h5 class="white-text">Contact:</h5>
                     <p class="grey-text text-lighten-4">
                         Lets talk. I'm always excited for new ideas and new opportunities. So, hit me up with an email
-                        or just say hello!</p> <br>Click <strong><a class="white-text" href="https://docs.google.com/document/d/1wUjiqwU5SQ-MsdVTBo7Z0g_59uTgR0K8AlT7bV3wzpM/edit#"> here</a></strong> for my resume!
+                        or just say hello!</p> <br>Click <strong><a class="white-text" href="https://docs.google.com/document/d/1wUjiqwU5SQ-MsdVTBo7Z0g_59uTgR0K8AlT7bV3wzpM/edit#">
+                            here</a></strong> for my resume!
                 </div>
                 <div class="col l3 s12">
                     <h5 class="white-text">Links:</h5>
@@ -83,9 +85,9 @@
 
         // constructing a queryURL variable to use instead of the literal string inside 
         // of the ajax method
-
         var title = "nbc+news";
         var queryURL = "http://newsapi.org/v2/top-headlines?country=us&apikey=ff06bd964fec4e12b2a54d3a24cbe1c4";
+
 
         $.ajax({
             url: queryURL,
@@ -96,16 +98,23 @@
 
             for (var i = 0; i < response.articles.length; i++) {
                 var article = response.articles[i];
-                var nbcArticleDiv = $("<div>");
+                var nbcArticleDiv = $("<div class='carousel-item'>");
                 var nbcImage = $("<img>");
+
+                nbcArticleDiv.text(article.title);
+                //??????nbcArticleDiv.text(article.description);
+
                 nbcImage.attr("src", article.urlToImage);
                 nbcArticleDiv.append(nbcImage);
-                
-                console.log("hello")
-                $("#nbc-div").append(nbcArticleDiv);
-                
+                console.log(nbcArticleDiv);
+
+                $(".carousel.carousel-slider").append(nbcArticleDiv[0]);
+
             };
 
+            $('.carousel.carousel-slider').carousel({
+                fullWidth: true
+            });
         });
 
     </script>
