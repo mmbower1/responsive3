@@ -35,7 +35,7 @@
         </div>
     </nav>
 
-    <h3>Click and drag for latest news!!</h3>
+    <h3>Click and drag for latest news...</h3>
     <!-- Carousel -->
     <div class="carousel carousel-slider"></div>
 
@@ -74,7 +74,7 @@
         </div>
         <div class="footer-copyright">
             <div class="container">
-                © Matthew Bower 2018. Made with <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+                © Matthew Bower 2019. Made with <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
             </div>
         </div>
     </footer>
@@ -92,7 +92,7 @@
         $.ajax({
             url: queryURL,
             method: "GET"
-        }).then(function (response) {
+        }).then(function(response) {
             console.log(response);
             console.log(response.articles);
 
@@ -102,7 +102,7 @@
                 var nbcImage = $("<img>");
 
                 nbcArticleDiv.text(article.title);
-                //??????nbcArticleDiv.text(article.description);
+                //nbcArticleDiv.text(article.description);
 
                 nbcImage.attr("src", article.urlToImage);
                 nbcArticleDiv.append(nbcImage);
@@ -113,7 +113,7 @@
             };
 
             $('.carousel.carousel-slider').carousel({
-                fullWidth: true
+                fullWidth: false
             });
         });
 
