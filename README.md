@@ -8,4 +8,4 @@
 
 - Thank you to materializecss.com for the awesome parallex templating. I took their template and reformatted, rearranged, and inputted my own elements to create a portfolio that represents who I am!
 
-- This portfolio uses static html rendering and uses an API to share the latest news. 
+- This portfolio uses static html rendering and uses an API from CBS to share the latest news. 
