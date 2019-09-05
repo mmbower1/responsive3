@@ -29,7 +29,7 @@ p {
     color: white;
     height: 20px;
     width: 2px;
-    /* font-family: 'Montserrat'; */
+    font-family: 'Montserrat';
 }
 
 .front-end-row, .back-end-row {
@@ -93,7 +93,7 @@ footer.page-footer {
 
 li, .white-text {
     margin-top: 5px;
-    /* font-family: 'Montserrat'; */
+    font-family: 'Montserrat';
 }
 
 @media only screen and (max-width : 992px) {
