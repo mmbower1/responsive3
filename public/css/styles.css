@@ -16,6 +16,15 @@ nav .brand-logo {
     height: 69px;
 }
 
+#main-header {
+    font-weight: 20px;
+    text-shadow: 2px 2px rgb(81, 81, 83);
+}
+
+#name-home {
+    text-shadow: 2px 2px rgb(81, 81, 83);
+}
+
 p {
     line-height: 2rem;
     font-family: 'Montserrat';
@@ -25,6 +34,7 @@ p {
     background-color: teal!important;
     box-shadow: 50px red;
 }
+
 
 .fa {
     /* background: teal;
@@ -127,3 +137,5 @@ li, .white-text {
       max-height: 170%; /* or higher percentages. It's up to your taste */
     }
   }
+
+
