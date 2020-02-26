@@ -1,12 +1,12 @@
 * Made By MaterializeCSS.com
 */
 
-.carousel, .carousel-slider {
+/* .carousel, .carousel-slider {
     background-position-x: 100px;
-}
+} */
 
 li {
-    background: teal;
+    /* background: teal; */
     font-family: 'Montserrat';
 }
 
