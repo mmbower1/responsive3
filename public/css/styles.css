@@ -1,6 +1,10 @@
 * Made By MaterializeCSS.com
 */
 
+.carousel, .carousel-slider {
+    background-position-x: 100px;
+}
+
 li {
     background: teal;
     font-family: 'Montserrat';
