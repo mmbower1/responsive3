@@ -1,10 +1,6 @@
 * Made By MaterializeCSS.com
 */
 
-/* .carousel, .carousel-slider {
-    background-position-x: 100px;
-} */
-
 li {
     /* background: teal; */
     font-family: 'Montserrat';
@@ -18,10 +14,6 @@ nav .brand-logo {
 
 #nav-teal {
     height: 69px;
-}
-
-.far {
-    margin-top: 15px;
 }
 
 #main-header {
@@ -132,6 +124,10 @@ li, .white-text {
     #index-banner .section {
         top: 0;
     }
+    .fas {
+        margin-top: 15px;
+    }
+        
 }
 
 @media only screen and (max-width : 992px) {
