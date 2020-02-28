@@ -1,8 +1,96 @@
 * Made By MaterializeCSS.com
 */
 
+.card:hover {
+    background-color: teal!important;
+    box-shadow: 50px red;
+}
+
+
+.fa {
+    /* background: teal;
+    border: teal;
+    display: no-repeat; */
+    color: white;
+    height: 20px;
+    width: 2px;
+    font-family: 'Montserrat';
+}
+
+.form input[type="text"],
+.form input[type="name"],
+.form input[type="email"]
+{
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 36%;
+}
+
+.front-end-row, .back-end-row {
+    margin-left: 15px;
+    margin-top: 30px;
+    font-size: 30px;
+    font-family: 'Montserrat';
+}
+
+footer.page-footer {
+    margin: 0;
+    font-family: 'Montserrat';
+}
+
+.form {
+    margin-top: 50px;
+}
+
+.icon-block {
+    padding: 0 15px;
+}
+
+.icon-block .material-icons {
+    font-size: inherit;
+}
+
+.header .center .teal-text .text-lighten-2 {
+    text-shadow: 5px 5px 5px;
+    font-family: 'Montserrat';
+}
+
 li {
     /* background: teal; */
+    font-family: 'Montserrat';
+}
+
+li, .white-text {
+    margin-top: 5px;
+    font-family: 'Montserrat';
+}
+
+.modal {
+    background-color: rgba(0, 0, 0, 0.7);
+    left: 0;
+    top: 0;
+    /* height: 100%; */
+    display: none;
+    position: fixed;
+    /* overflow: auto; */
+    width: 100%;
+    /* z-index: 1; */
+}
+
+.modal-content {
+    background-color: #f4f4f4;
+    margin: 20% auto;
+    /* padding: 20px; */
+    width: 70%;
+}
+
+#nbc-div .img{
+    width: 20em;
     font-family: 'Montserrat';
 }
 
@@ -27,52 +115,6 @@ nav .brand-logo {
 
 p {
     line-height: 2rem;
-    font-family: 'Montserrat';
-}
-
-.card:hover {
-    background-color: teal!important;
-    box-shadow: 50px red;
-}
-
-
-.fa {
-    /* background: teal;
-    border: teal;
-    display: no-repeat; */
-    color: white;
-    height: 20px;
-    width: 2px;
-    font-family: 'Montserrat';
-}
-
-.front-end-row, .back-end-row {
-    margin-left: 15px;
-    margin-top: 30px;
-    font-size: 30px;
-    font-family: 'Montserrat';
-}
-
-footer.page-footer {
-    margin: 0;
-    font-family: 'Montserrat';
-}
-
-.icon-block {
-    padding: 0 15px;
-}
-
-.icon-block .material-icons {
-    font-size: inherit;
-}
-
-.header .center .teal-text .text-lighten-2 {
-    text-shadow: 5px 5px 5px;
-    font-family: 'Montserrat';
-}
-
-#nbc-div .img{
-    width: 20em;
     font-family: 'Montserrat';
 }
 
@@ -103,11 +145,6 @@ footer.page-footer {
     position: absolute;
     left: 50%;
     top: 60%;
-}
-
-li, .white-text {
-    margin-top: 5px;
-    font-family: 'Montserrat';
 }
 
 @media only screen and (max-width : 992px) {

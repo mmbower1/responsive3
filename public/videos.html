@@ -22,29 +22,27 @@
     <!-- Nav -->
     <nav id="nav-teal" class="teal" role="navigation">
         <div class="nav-wrapper container">
-            <a id="logo-container" href="./home.html" class="brand-logo" data-target="dropdown1"><i class="far fa-newspaper"></i>News</a>
+            <a id="logo-container" href="./home.html" class="brand-logo" data-target="dropdown1"><i class="fas fa-video"></i>Video Content</a>
             <ul id="dropdown1" class="right hide-on-med-and-down">
                 <li><a class="hoverable" href="./home.html"><i class="fas fa-home" style="font-size:15px"></i> Home</a></li>
                 <li><a class="hoverable" href="./portfolio.html">Portfolio</a></li>
+                <li><a href="./news.html">News</a></li>
                 <li><a href="./subscribe.html">Subscribe</a></li>
                 <li><a class="hoverable" href="#contact">Contact</a></li>
             </ul>
             <ul id="nav-mobile" class="sidenav">
                 <li><a href="./home.html">Home</a></li>
                 <li><a href="./portfolio.html">Portfolio</a></li>
+                <li><a href="./news.html">News</a></li>
                 <li><a href="./subscribe.html">Subscribe</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         </div>
     </nav>
-
-    <h3>Click and drag for latest news...</h3>
-    <!-- Carousel -->
-    <div id="carousel-image" class="carousel carousel-slider"></div>
-
+        youtube vids
     <!-- Footer -->
-    <footer id="contact" class="page-footer teal">
+    <footer id="subscribe-footer" class="page-footer teal">
         <div class="container">
             <div class="row">
                 <div class="col l6 s12">
@@ -85,42 +83,9 @@
 
     <script type="text/javascript">
 
-        var myRequest = [];
-
-        // constructing a queryURL variable to use instead of the literal string inside 
-        // of the ajax method
-        var title = "nbc+news";
-        var queryURL = "https://newsapi.org/v2/top-headlines?country=us&apikey=ff06bd964fec4e12b2a54d3a24cbe1c4";
-
-
-        $.ajax({
-            url: queryURL,
-            method: "GET"
-        }).then(function(res) {
-            console.log(res);
-            console.log(res.articles);
-
-            for (var i = 0; i < res.articles.length; i++) {
-                var article = res.articles[i];
-                var nbcArticleDiv = $("<div class='carousel-item'>");
-                var nbcImage = $("<img>");
-
-                nbcArticleDiv.text(article.title);
-                nbcArticleDiv.text(article.description);
-                //nbcArticleDiv.text(article.description);
-
-                nbcImage.attr("src", article.urlToImage);
-                nbcArticleDiv.append(nbcImage);
-                console.log(nbcArticleDiv);
-
-                $(".carousel.carousel-slider").append(nbcArticleDiv[0]);
-
-            };
-
-            $('.carousel.carousel-slider').carousel({
-                fullWidth: true,
-            });
-        });
+    $(document).ready(function(){
+        $('.modal').modal();
+      });
 
     </script>
 
