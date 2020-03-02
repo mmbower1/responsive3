@@ -18,7 +18,7 @@
     <script src="https://kit.fontawesome.com/0c10d67e43.js"></script>
 </head>
 
-<body>
+<body class="videos-body">
     <!-- Nav -->
     <nav id="nav-teal" class="teal" role="navigation">
         <div class="nav-wrapper container">
@@ -40,7 +40,57 @@
             <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         </div>
     </nav>
-        youtube vids
+      <!-- videos -->
+      <div class="videos-div">
+        <video 
+          id="video" 
+          class="screen" 
+          src="videos/joshfluke.mp4"
+          poster="img/poster.png"
+        >
+        </video>
+        <div class="video-controls">
+          <button class="btn" id="play">
+            <i class="fa fa-play fa-2x"></i>
+          </button>
+          <button class="btn" id="stop">
+            <i class="fa fa-stop fa-2x"></i>
+          </button>
+          <input 
+            type="range" 
+            id="progress" 
+            class="progress" 
+            min="0" max="100" 
+            step="0.1" 
+            value="0"
+          />
+          <span class="timestamp" id="timestamp">00:00</span>
+        </div>
+        <video 
+          id="video" 
+          class="screen" 
+          src="videos/fizzbuzz.mp4"
+          poster="img/poster.png"
+        >
+        </video>
+      <div class="video-controls">
+        <button class="btn" id="play">
+          <i class="fa fa-play fa-2x"></i>
+        </button>
+        <button class="btn" id="stop">
+          <i class="fa fa-stop fa-2x"></i>
+        </button>
+        <input 
+          type="range" 
+          id="progress" 
+          class="progress" 
+          min="0" max="100" 
+          step="0.1" 
+          value="0"
+        />
+        <span class="timestamp" id="timestamp">00:00</span>
+      </div>
+    </div>
     <!-- Footer -->
     <footer id="subscribe-footer" class="page-footer teal">
         <div class="container">
@@ -76,17 +126,70 @@
         </div>
         <div class="footer-copyright">
             <div class="container">
-                © Matthew Bower 2019. Made with <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+                © Matthew Bower 2020. Made with <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
             </div>
         </div>
     </footer>
-
     <script type="text/javascript">
+      const video = document.getElementById('video');
+      const play = document.getElementById('play');
+      const stop = document.getElementById('stop');
+      const progress = document.getElementById('progress');
+      const timestamp = document.getElementById('timestamp');
 
-    $(document).ready(function(){
-        $('.modal').modal();
-      });
+      // play/pause vid
+      function toggleVideoStatus() {
+        if (video.paused) {
+          video.play()
+        } else {
+          video.pause();
+        }
+      }
 
+      // update play/pause icons
+      function updatePlayIcon() {
+        if (video.paused) {
+          play.innerHTML = '<i class="fa fa-play fa-2x"></i>'
+        } else {
+          play.innerHTML = '<i class="fa fa-pause fa-2x"></i>'
+        }
+      }
+
+      // update progress and timestamp
+      function updateProgress() {
+        progress.value = (video.currentTime / video.duration) * 100;
+        // get minutes
+        let mins = Math.floor(video.currentTime / 60);
+        if (mins < 10) {
+          mins = '0' + String(mins)
+        }
+        // get seconds
+        let secs = Math.floor(video.currentTime % 60);
+        if (secs < 10) {
+          secs = '0' + String(secs)
+        }
+        timestamp.innerHTML = `${mins}:${secs}`;
+      }
+
+      // set video time to progress
+      function setVideoProgress() {
+        video.currentTime = (+progress.value * video.duration) / 100;
+      }
+
+      function stopVideo() {
+        video.currentTime = 0;
+        video.pause();
+      }
+
+      // event listeners
+      video.addEventListener('click', toggleVideoStatus);
+      video.addEventListener('pause', updatePlayIcon);
+      video.addEventListener('play', updatePlayIcon);
+      video.addEventListener('timeupdate', updateProgress);
+
+      play.addEventListener('click', toggleVideoStatus);
+      stop.addEventListener('click', stopVideo);
+      progress.addEventListener('change', setVideoProgress);
     </script>
 
 
