@@ -5629,6 +5629,7 @@
    * https://github.com/fians/Waves/blob/master/LICENSE
    */
   .waves-effect {
+    
     position: relative;
     cursor: pointer;
     display: inline-block;
@@ -5645,6 +5646,7 @@
   }
   
   .waves-effect .waves-ripple {
+
     position: absolute;
     border-radius: 50%;
     width: 20px;
@@ -5753,7 +5755,7 @@
     right: 0;
     background-color: #fafafa;
     padding: 0;
-    max-height: 70%;
+    height: 500px;
     width: 55%;
     margin: auto;
     overflow-y: auto;

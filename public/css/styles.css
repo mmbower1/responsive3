@@ -10,6 +10,12 @@
     box-shadow: 50px red;
 }
 
+/* #frontend-bottom-row {
+    align-items: center;
+    margin: auto;
+    justify-content: center;
+} */
+
 
 .fa {
     /* background: teal;
@@ -21,10 +27,13 @@
     font-family: 'Montserrat';
 }
 
+.form {
+    margin: 160px 0;
+}
+
 .form input[type="text"],
 .form input[type="name"],
-.form input[type="email"]
-{
+.form input[type="email"] {
     border-radius: 3px;
     border: 1px solid #ccc;
     display: block;
@@ -146,7 +155,7 @@ p {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     cursor: pointer;
-    width: 60%;
+    width: 87%;
   }
 
 .sidenav-trigger {
@@ -159,6 +168,23 @@ p {
     top: 60%;
 }
 
+#subscribe-button {
+    color: #333;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+#subscribe-button, button {
+    border-radius: 3px;
+    padding: 9px 15px;
+}
+
+/* #subscribe-button {
+    align-items: center;
+} */
+
 .video-controls {
     align-items: center;
     background-color: #333;
@@ -166,9 +192,9 @@ p {
     border-bottom-right-radius: 10px;
     color: #fff;
     display: flex;
-    /* justify-content: center; */
+    justify-content: center;
     padding: 10px;
-    width: 60%;
+    width: 87%;
 }
 
 .video-controls .btn {
@@ -195,26 +221,39 @@ p {
 
 .videos-div {
     align-items: center;
-    background-color: #666;
+    background-color: rgb(172, 171, 171);
     display: flex;
-    margin: 0;
-    justify-content: center;
-}
-
-.videos-body {
-    
     flex-direction: column;
     font-family: 'Questrial', sans-serif;
-  }
+    justify-content: center;
+    margin: 0;
+    max-height: 100vh;
+}
+
+.videos-div, h6 {
+    text-decoration: underline;
+    text-align: center;
+}
+
+/* .videos-body {
+    flex-direction: column;
+    font-family: 'Questrial', sans-serif;
+  } */
 
 @media only screen and (max-width : 992px) {
     .parallax-container .section {
         position: absolute;
         top: 40%;
     }
+    .parallax img {
+        max-height: 130%; /* or a little bit higher */
+    }
     #index-banner .section {
-            top: 10%;
-        }
+        top: 10%;
+    }
+    .parallax img {
+        max-height: 170%; /* or higher percentages. It's up to your taste */
+    }
 }
 
 @media only screen and (max-width : 600px) {
@@ -224,25 +263,14 @@ p {
     .fas {
         margin-top: 15px;
     }
-        
+    .screen {
+        /* margin-top: 10px; */
+        width: 90%;
+    }
+    .video-controls {
+        height: 30px;
+        width: 90%;
+    }
 }
-
-@media only screen and (max-width : 992px) {
-    .parallax img {
-      max-height: 130%; /* or a little bit higher */
-    }
-  }
-  
-  @media only screen and (min-width: 993px) {
-    .parallax img {
-      max-height: 170%; /* or higher percentages. It's up to your taste */
-    }
-  }
-
-  @media(max-width: 800px) {
-    .screen, .controls {
-      /* width: 50%; */
-    }
-  }
 
 

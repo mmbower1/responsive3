@@ -16,6 +16,10 @@
     <link rel="stylesheet" href="css/styles.css" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <script src="https://kit.fontawesome.com/0c10d67e43.js"></script>
+
+    <!-- sweet alert -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
 </head>
 
 <body>
@@ -40,22 +44,23 @@
             <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         </div>
     </nav>
-    <!-- Subscription Form -->
 
-      <!-- Modal Structure -->
+      <!-- Materialize Modal Structure -->
       <div id="modal1" class="modal">
         <div class="modal-content">
-          <p>Thank you for subscribing!</p>
-          <p>This helps tremendously in getting my name out there to the rest of the world to see what I have to offer in tech! </p>
+          <h5>You got caught!!!</h5>
+          <p>Just kidding. But his helps me tremendously in getting my name out there to the rest of the world to see what I have to offer in tech! I might or might not have attached this to a production Mongo database just for your info ;) the power of code, eh?</p>
           <div class="modal-footer">
-            <a href="#!" class="modal-close">Agree</a>
+            <a href="#!" class="modal-close">Agree </a>
           </div>
         </div>
       </div>
+
       <!-- Form -->
-      <form class="form" action="home.html">
+      <form class="form">
         <div class="form-group">
           <input
+            id='name'
             type="text"
             placeholder="Name"
             name="name"
@@ -64,14 +69,20 @@
         </div>
         <div class="form-group">
           <input
+            id='email'
             type="email"
             placeholder="Email"
             name="email"
             required
           />
         </div>
-        <!-- Modal Trigger -->
-        <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Subscribe</a>
+        <div id="subscribe-button" class="subscribe-button" type="subscribe" onclick='subscribe()'>
+          <button>
+            Subscribe
+          </button>
+        </div>
+        <!-- Materialize Modal Trigger -->
+        <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Subscribe</a> -->
       </form>
 
     <!-- Footer -->
@@ -116,9 +127,23 @@
 
     <script type="text/javascript">
 
-    $(document).ready(function(){
-        $('.modal').modal();
-      });
+    $(document).ready(function() {
+      $('.modal').modal();
+    });
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+
+    document.getElementById('subscribe-button').addEventListener('submit', subscribe);
+
+    function subscribe(e) {
+      if (name === '' || email === '') {
+        return;
+      } else {
+        sweetAlert('YOU GOT CAUGHT!!! Jk... But I could or should attach a production Mongo database to keep tabs on you! Jk.. Im not Zuck yet.')
+      }
+      // alert('hi');
+    }
 
     </script>
 

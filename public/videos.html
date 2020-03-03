@@ -22,7 +22,7 @@
     <!-- Nav -->
     <nav id="nav-teal" class="teal" role="navigation">
         <div class="nav-wrapper container">
-            <a id="logo-container" href="./home.html" class="brand-logo" data-target="dropdown1"><i class="fas fa-video"></i>Video Content</a>
+            <a id="logo-container" href="./home.html" class="brand-logo" data-target="dropdown1"><i class="fas fa-video"></i>Videos</a>
             <ul id="dropdown1" class="right hide-on-med-and-down">
                 <li><a class="hoverable" href="./home.html"><i class="fas fa-home" style="font-size:15px"></i> Home</a></li>
                 <li><a class="hoverable" href="./portfolio.html">Portfolio</a></li>
@@ -40,7 +40,10 @@
             <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         </div>
     </nav>
-      <!-- videos -->
+      <!-- josh fluke says no to trilogy -->
+      <h6 class="video-title">
+        <a href="https://www.youtube.com/watch?v=yE1tOmRJVU0&t=1s">Josh Fluke says NO to Trilogy Education Services</a>
+      </h6>
       <div class="videos-div">
         <video 
           id="video" 
@@ -66,11 +69,17 @@
           />
           <span class="timestamp" id="timestamp">00:00</span>
         </div>
+      </div>
+      <!-- fizzbuzz -->
+      <h6 class="video-title">
+        <a href="https://www.youtube.com/watch?v=AkLNhnQqCH4">FizzBuzz app demonstration</a>
+      </h6>
+      <div class="videos-div">
         <video 
-          id="video" 
+          id="video2" 
           class="screen" 
           src="videos/fizzbuzz.mp4"
-          poster="img/poster.png"
+          poster="image/poster.png"
         >
         </video>
       <div class="video-controls">
@@ -132,6 +141,7 @@
     </footer>
     <script type="text/javascript">
       const video = document.getElementById('video');
+      const video2 = document.getElementById('video2');
       const play = document.getElementById('play');
       const stop = document.getElementById('stop');
       const progress = document.getElementById('progress');
