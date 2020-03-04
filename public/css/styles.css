@@ -159,7 +159,7 @@ p {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     cursor: pointer;
-    width: 87%;
+    width: 70%;
   }
 
 .sidenav-trigger {
@@ -198,7 +198,7 @@ p {
     display: flex;
     justify-content: center;
     padding: 10px;
-    width: 87%;
+    width: 70%;
 }
 
 .video-controls .btn {
