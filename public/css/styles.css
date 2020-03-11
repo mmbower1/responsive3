@@ -186,6 +186,18 @@ nav .brand-logo {
 #news-container {
     text-align: center;
 }
+#news-container2 {
+    text-align: center;
+}
+
+.newspage-title {
+    text-align: center;
+}
+
+/* .news-body {
+    display: grid;
+    grid-template-rows: 100% 100%;
+} */
 
 p {
     line-height: 2rem;
