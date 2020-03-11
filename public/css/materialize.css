@@ -2005,6 +2005,7 @@
   
   .blue-grey.darken-1 {
     background-color: #546e7a !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
   }
   
   .blue-grey-text.text-darken-1 {
@@ -8352,6 +8353,7 @@
   }
   
   .carousel {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     margin: auto;
     overflow: hidden;
     position: relative;
@@ -8379,7 +8381,7 @@
   }
   
   .carousel.carousel-slider .carousel-fixed-item.with-indicators {
-    bottom: 68px;
+    bottom: 28px;
   }
   
   .carousel.carousel-slider .carousel-item {

@@ -57,33 +57,32 @@
       </div>
 
       <!-- Form -->
-      <form class="form">
-        <div class="form-group">
-          <input
-            id='name'
-            type="text"
-            placeholder="Name"
-            name="name"
-            required
-          />
-        </div>
-        <div class="form-group">
-          <input
-            id='email'
-            type="email"
-            placeholder="Email"
-            name="email"
-            required
-          />
-        </div>
-        <div id="subscribe-button" class="subscribe-button" type="subscribe" onclick='subscribe()'>
-          <button>
-            Subscribe
-          </button>
-        </div>
-        <!-- Materialize Modal Trigger -->
-        <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Subscribe</a> -->
-      </form>
+      <div class="form-container">
+        <form id="form" class="form">
+          <h5>Subscribe to me!</h5>
+          <div class="form-control">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter Username">
+            <small>Error message</small>
+          </div>
+          <div class="form-control">
+            <label for="email">Email</label>
+            <input type="text" id="email" placeholder="Enter Email">
+            <small>Error message</small>
+          </div>
+          <div class="form-control">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter Password">
+            <small>Error message</small>
+          </div>
+          <div class="form-control">
+            <label for="password2">Confirm Password</label>
+            <input type="password" id="confirm" placeholder="Confirm Password">
+            <small>Error message</small>
+          </div>
+          <button id="subscribe-button" type="submit">Submit</button>
+        </form>
+      </div>
 
     <!-- Footer -->
     <footer id="subscribe-footer" class="page-footer teal">
@@ -131,18 +130,78 @@
       $('.modal').modal();
     });
 
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
+    const form = document.getElementById('form');
+    const username = document.getElementById('username');
+    const email = document.getElementById('email');
+    const password = document.getElementById('password');
+    const password2 = document.getElementById('confirm');
 
-    document.getElementById('subscribe-button').addEventListener('submit', subscribe);
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      checkRequired([username, email, password, password2]);
+      checkLength(username, 3, 16);
+      checkLength(password, 6, 25);
+      validEmail(email);
+      passwordMatch(password, password2);
+    });
 
-    function subscribe(e) {
-      if (name === '' || email === '') {
-        return;
+    // check if each form input field is empty
+    function checkRequired(inputArr) {
+      inputArr.forEach((input) => {
+        if (input.value.trim() === '') {
+          showError(input, `${getFieldName(input)} is required`);
+        } else {
+          showSuccess(input);
+        }
+      })
+    }
+
+    // success field input outline (green)
+    function showSuccess(input) {
+      // grabs the div parent of input 
+      const formControl = input.parentElement;
+      formControl.className = 'form-control success';
+    }
+    // error field input outline (red)
+    function showError(input, message) {
+      // grabs the div parent of input 
+      const formControl = input.parentElement;
+      const small = formControl.querySelector('small');
+      formControl.className = 'form-control error';
+      small.innerText = message;
+    }
+
+    // get field name and uppercase it
+    function getFieldName(input) {
+      return input.id.charAt(0).toUpperCase() + input.id.slice(1);
+    }
+
+    // check for proper field input length
+    function checkLength(input, min, max) {
+      if (input.value.length < min) {
+        showError(input, `${getFieldName(input)} must be atleast ${min} characters`);
+      } else if (input.value.length > max) {
+        showError(input, `${getFieldName(input)} must be less than ${max} characters`);
       } else {
-        sweetAlert('YOU GOT CAUGHT!!! Jk... But I could or should attach a production Mongo database to keep tabs on you! Jk.. Im not Zuck yet.')
+        showSuccess(input);
       }
-      // alert('hi');
+    }
+
+    // checks for valid email in email input field
+    function validEmail(input) {
+      var regexEmail = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+      if (regexEmail.test(input.value.trim())) {
+        showSuccess(input);
+      } else {
+        showError(input, 'Email is not valid');
+      }
+    }
+
+    // check passwords must match
+    function passwordMatch(input1, input2) {
+      if (input1.value !== input2.value) {
+        showError(input2, 'Passwords do not match')
+      }
     }
 
     </script>
