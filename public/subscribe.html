@@ -58,25 +58,24 @@
 
       <!-- Form -->
       <div class="form-container">
-        <form id="form" class="form">
-          <h5>Subscribe to me!</h5>
+        <form id="form" class="form" action="/subscribe.html">
           <div class="form-control">
-            <label for="username">Username</label>
+            <label for="username"></label>
             <input type="text" id="username" placeholder="Enter Username">
             <small>Error message</small>
           </div>
           <div class="form-control">
-            <label for="email">Email</label>
+            <label for="email"></label>
             <input type="text" id="email" placeholder="Enter Email">
             <small>Error message</small>
           </div>
           <div class="form-control">
-            <label for="password">Password</label>
+            <label for="password"></label>
             <input type="password" id="password" placeholder="Enter Password">
             <small>Error message</small>
           </div>
           <div class="form-control">
-            <label for="password2">Confirm Password</label>
+            <label for="password2"></label>
             <input type="password" id="confirm" placeholder="Confirm Password">
             <small>Error message</small>
           </div>
@@ -152,6 +151,7 @@
           showError(input, `${getFieldName(input)} is required`);
         } else {
           showSuccess(input);
+          sweetAlert('Thanks!');
         }
       })
     }
