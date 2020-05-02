@@ -325,7 +325,8 @@ p {
         top: 10%;
     }
     .parallax img {
-        max-height: 170%; /* or higher percentages. It's up to your taste */
+        max-height: 170%; 
+        /* or higher percentages. It's up to your taste */
     }
 }
 
