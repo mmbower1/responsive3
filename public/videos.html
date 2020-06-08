@@ -42,18 +42,18 @@
     </nav>
       <!-- josh fluke says no to trilogy -->
       <h6 class="video-title">
-        <a href="https://www.youtube.com/watch?v=yE1tOmRJVU0&t=1s">Josh Fluke says NO to Trilogy Education Services: +600 Youtube views</a>
+        <a href="https://www.youtube.com/watch?v=yE1tOmRJVU0&t=1s">Even array elements (JS) algorithm demonstration</a>
       </h6>
       <div class="videos-div">
         <video 
           id="video" 
           class="screen" 
-          src="videos/joshfluke.mp4"
+          src="videos/Even elements in array (JS) algorithm.mp4"
           poster="images/poster.png"
         >
         </video>
         <div class="video-controls">
-          <button class="btn" id="play">
+          <button class="btn play" data-video-id="video" id="play">
             <i class="fa fa-play fa-2x"></i>
           </button>
           <button class="btn" id="stop">
@@ -72,18 +72,18 @@
       </div>
       <!-- fizzbuzz -->
       <h6 class="video-title">
-        <a href="https://www.youtube.com/watch?v=AkLNhnQqCH4">FizzBuzz app demonstration</a>
+        <a href="https://www.youtube.com/watch?v=Iv9CYstG0OA">Josh Fluke says NO to Trilogy Education Services: +600 Youtube views</a>
       </h6>
       <div class="videos-div">
         <video 
           id="video2" 
           class="screen" 
-          src="videos/fizzbuzz.mp4"
+          src="videos/joshfluke.mp4"
           poster="images/poster.png"
         >
         </video>
       <div class="video-controls">
-        <button class="btn" id="play">
+        <button class="btn play" data-video-id="video2" id="play">
           <i class="fa fa-play fa-2x"></i>
         </button>
         <button class="btn" id="stop">
@@ -140,18 +140,27 @@
         </div>
     </footer>
     <script type="text/javascript">
-      const video = document.getElementById('video');
+      let video = document.getElementById('video');
       const video2 = document.getElementById('video2');
-      const play = document.getElementById('play');
+      let play = document.getElementsByClassName('play');
       const stop = document.getElementById('stop');
       const progress = document.getElementById('progress');
       const timestamp = document.getElementById('timestamp');
 
       // play/pause vid
-      function toggleVideoStatus() {
+      function toggleVideoStatus(e) {
+        var targetElement = e.target || e.srcElement;
+        // Get the parent video element 
+        var videoName = this.getAttribute("data-video-id");
+        console.log(`video name is: ${videoName}`);
+        console.log(`this.innerHTML ${this.innerHTML}`);
+        // Set the video element to video 
+        video = document.getElementById(videoName);
         if (video.paused) {
+          console.log('Playing video');
           video.play()
         } else {
+          console.log('Pausing video');
           video.pause();
         }
       }
@@ -197,7 +206,11 @@
       video.addEventListener('play', updatePlayIcon);
       video.addEventListener('timeupdate', updateProgress);
 
-      play.addEventListener('click', toggleVideoStatus);
+      // NEW event listener
+      for(let i = 0; i < play.length; i++) {
+        play[i].addEventListener("click", toggleVideoStatus)
+      }
+      //play.addEventListener('click', toggleVideoStatus);
       stop.addEventListener('click', stopVideo);
       progress.addEventListener('change', setVideoProgress);
     </script>
