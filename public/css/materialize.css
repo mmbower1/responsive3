@@ -980,7 +980,7 @@
   }
   
   .teal {
-    background-color: #009688 !important;
+    background: linear-gradient(217deg, #009688, #b4b9ed) !important;
   }
   
   .teal-text {
@@ -1016,7 +1016,7 @@
   }
   
   .teal-text.text-lighten-2 {
-    color: #4db6ac !important;
+    color: linear-gradient(217deg, #009688, #b4b9ed) !important;
   }
   
   .teal.lighten-1 {
@@ -1904,7 +1904,7 @@
   }
   
   .brown-text.text-lighten-3 {
-    color: #bcaaa4 !important;
+    color: #444 !important;
   }
   
   .brown.lighten-2 {
