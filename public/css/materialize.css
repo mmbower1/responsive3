@@ -980,7 +980,7 @@
   }
   
   .teal {
-    background: linear-gradient(217deg, #009688, #b4b9ed) !important;
+    background: linear-gradient(350deg, rgb(245, 188, 82), #009688, #b4b9ed) !important;
   }
   
   .teal-text {
@@ -4382,7 +4382,7 @@
   }
   
   nav ul {
-    margin: 0;
+    margin: -2.5px;
   }
   
   nav ul li {

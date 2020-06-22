@@ -112,7 +112,7 @@
             url: queryURL,
             method: "GET"
         }).then(function(res) {
-            // console.log(res);
+            console.log(res);
             console.log('NBC: ', res.articles);
 
             for (var i = 0; i < res.articles.length; i++) {
@@ -137,7 +137,7 @@
             });
         });
         
-        // sports
+        sports
         $.ajax({
             url: sportsAPI,
             method: "GET"

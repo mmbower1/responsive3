@@ -140,6 +140,12 @@ li, .white-text {
     font-family: 'Montserrat';
 }
 
+#main-header {
+    font-weight: 20px;
+    text-shadow: 2px 2px rgb(81, 81, 83);
+    margin-top: 110px;
+}
+
 .modal {
     background-color: rgba(0, 0, 0, 0.7);
     left: 0;
@@ -172,12 +178,6 @@ nav .brand-logo {
 
 #nav-teal {
     height: 69px;
-}
-
-#main-header {
-    font-weight: 20px;
-    text-shadow: 2px 2px rgb(81, 81, 83);
-    margin-top: 110px;
 }
 
 #name-home {
