@@ -46,7 +46,7 @@
     <div class='news-body'>
         <div id="news-container">
             <!-- Carousel -->
-            <img src="./images/nbclogo.png" width="40" height="40"/>
+            <img src="./images/espnlogo.jpg" width="40" height="40"/>
             <div id="carousel-image" class="carousel carousel-slider"></div>
         </div>
         <!-- <div id="news-container2"> -->
@@ -106,15 +106,25 @@
         var title = "nbc+news";
         var queryURL = "https://newsapi.org/v2/top-headlines?country=us&apikey=ff06bd964fec4e12b2a54d3a24cbe1c4";
         var sportsAPI = 'http://newsapi.org/v2/top-headlines?country=us&category=sports&apiKey=ff06bd964fec4e12b2a54d3a24cbe1c4';
+        var omdb = 'http://www.omdbapi.com/?i=tt3896198&apikey=f77ea178';
+
+
+        fetch(queryURL) // Call the fetch function passing the url of the API as a parameter
+        .then(function() {
+            // Your code for handling the data you get from the API
+        })
+        .catch(function() {
+            // This is where you run code if the server returns any errors
+        });
+
+
 
         // nbc
         $.ajax({
-            url: queryURL,
+            url: sportsAPI,
             method: "GET"
-        }).then(function(res) {
-            console.log(res);
-            console.log('NBC: ', res.articles);
-
+        }).then((res) => {
+            console.log('omdb res: ', res.Poster);
             for (var i = 0; i < res.articles.length; i++) {
                 var article = res.articles[i];
                 var nbcArticleDiv = $("<div class='carousel-item'>");
@@ -137,7 +147,7 @@
             });
         });
         
-        sports
+        //sports
         $.ajax({
             url: sportsAPI,
             method: "GET"
@@ -159,14 +169,10 @@
                 fullWidth: true,
             });
         });
-
-    </script>
-
-
-    <!--  Scripts-->
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="js/materialize.js"></script>
-    <script src="js/init.js"></script>
-</body>
-
+        </script>
+        <!--  Scripts-->
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="js/materialize.js"></script>
+        <script src="js/init.js"></script>
+    </body>
 </html>
