@@ -40,15 +40,15 @@
             <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         </div>
     </nav>
-      <!-- josh fluke says no to trilogy -->
+      <!-- Leetcode (JS) algorithm demonstration -->
       <h6 class="video-title">
-        <a href="https://www.youtube.com/watch?v=yE1tOmRJVU0&t=1s">Even array elements (JS) algorithm demonstration</a>
+        <a href="https://www.youtube.com/watch?v=UKHDJCIapTw">Leetcode (JS) Palindrome Number</a>
       </h6>
       <div class="videos-div">
         <video 
           id="video" 
           class="screen" 
-          src="videos/Even elements in array (JS) algorithm.mp4"
+          src="videos/PalindromeNumberJSLeetcode.mp4"
           poster="images/poster.png"
         >
         </video>
@@ -70,7 +70,7 @@
           <span class="timestamp" id="timestamp">00:00</span>
         </div>
       </div>
-      <!-- fizzbuzz -->
+      <!-- josh fluke says no -->
       <h6 class="video-title">
         <a href="https://www.youtube.com/watch?v=Iv9CYstG0OA">Josh Fluke says NO to Trilogy Education Services: +700 Youtube views</a>
       </h6>
@@ -84,6 +84,36 @@
         </video>
       <div class="video-controls">
         <button class="btn play" data-video-id="video2" id="play">
+          <i class="fa fa-play fa-2x"></i>
+        </button>
+        <button class="btn" id="stop">
+          <i class="fa fa-stop fa-2x"></i>
+        </button>
+        <input 
+          type="range" 
+          id="progress" 
+          class="progress" 
+          min="0" max="100" 
+          step="0.1" 
+          value="0"
+        />
+        <span class="timestamp" id="timestamp">00:00</span>
+      </div>
+    </div>
+    <!-- Even array elements (JS) algorithm demonstration -->
+    <h6 class="video-title">
+      <a href="https://www.youtube.com/watch?v=yE1tOmRJVU0&t=1s">Even array elements (JS) algorithm demonstration</a>
+    </h6>
+    <div class="videos-div">
+      <video 
+        id="video3" 
+        class="screen" 
+        src="videos/Even elements in array (JS) algorithm.mp4"
+        poster="images/poster.png"
+      >
+      </video>
+      <div class="video-controls">
+        <button class="btn play" data-video-id="video3" id="play">
           <i class="fa fa-play fa-2x"></i>
         </button>
         <button class="btn" id="stop">
@@ -143,6 +173,7 @@
     <script type="text/javascript">
       let video = document.getElementById('video');
       const video2 = document.getElementById('video2');
+      const video3 = document.getElementById('video3');
       let play = document.getElementsByClassName('play');
       const stop = document.getElementById('stop');
       const progress = document.getElementById('progress');
