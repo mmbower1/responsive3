@@ -105,6 +105,8 @@
         var queryURL = "https://newsapi.org/v2/top-headlines?country=us&apikey=ff06bd964fec4e12b2a54d3a24cbe1c4";
         var sportsAPI = 'http://newsapi.org/v2/top-headlines?country=us&category=sports&apiKey=ff06bd964fec4e12b2a54d3a24cbe1c4';
         var omdb = 'http://www.omdbapi.com/?i=tt3896198&apikey=f77ea178';
+        // var dataNews = '04cmf480xjbmdgw1d1l5lv0j1';
+        var dataNews = "https://newsapi.org/v2/top-headlines?country=in&pageSize=100&apiKey=04cmf480xjbmdgw1d1l5lv0j1"
         fetch(queryURL) // Call the fetch function passing the url of the API as a parameter
         .then(function() {
             // Your code for handling the data you get from the API
@@ -115,7 +117,7 @@
 
         // nbc
         $.ajax({
-            url: queryURL,
+            url: sportsAPI,
             method: "GET"
         }).then((res) => {
             console.log('omdb res: ', res.Poster);
