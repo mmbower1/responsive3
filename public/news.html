@@ -98,17 +98,13 @@
     </footer>
 
     <script type="text/javascript">
-
         var myRequest = [];
-
         // constructing a queryURL variable to use instead of the literal string inside 
         // of the ajax method
         var title = "nbc+news";
         var queryURL = "https://newsapi.org/v2/top-headlines?country=us&apikey=ff06bd964fec4e12b2a54d3a24cbe1c4";
         var sportsAPI = 'http://newsapi.org/v2/top-headlines?country=us&category=sports&apiKey=ff06bd964fec4e12b2a54d3a24cbe1c4';
         var omdb = 'http://www.omdbapi.com/?i=tt3896198&apikey=f77ea178';
-
-
         fetch(queryURL) // Call the fetch function passing the url of the API as a parameter
         .then(function() {
             // Your code for handling the data you get from the API
@@ -116,8 +112,6 @@
         .catch(function() {
             // This is where you run code if the server returns any errors
         });
-
-
 
         // nbc
         $.ajax({
@@ -148,27 +142,27 @@
         });
         
         //sports
-        $.ajax({
-            url: sportsAPI,
-            method: "GET"
-        }).then((res) => {
-            console.log('SPORTS: ', res);
-            for (var i = 0; i < res.articles.length; i++) {
-                var article2 = res.articles[i];
-                var sportsArticleDiv = $("<div class='carousel-item'>");
-                var sportsImage = $("<img>");
+        // $.ajax({
+        //     url: sportsAPI,
+        //     method: "GET"
+        // }).then((res) => {
+        //     console.log('SPORTS: ', res);
+        //     for (var i = 0; i < res.articles.length; i++) {
+        //         var article2 = res.articles[i];
+        //         var sportsArticleDiv = $("<div class='carousel-item'>");
+        //         var sportsImage = $("<img>");
 
-                sportsArticleDiv.text(article2.title);
-                sportsArticleDiv.text(article2.description);
+        //         sportsArticleDiv.text(article2.title);
+        //         sportsArticleDiv.text(article2.description);
 
-                sportsImage.attr("src", article2.urlToImage);
-                sportsArticleDiv.append(sportsImage);
-                $(".carousel2.carousel-slider2").append(sportsArticleDiv[0]);
-            };
-            $('.carousel2.carousel-slider2').carousel({
-                fullWidth: true,
-            });
-        });
+        //         sportsImage.attr("src", article2.urlToImage);
+        //         sportsArticleDiv.append(sportsImage);
+        //         $(".carousel2.carousel-slider2").append(sportsArticleDiv[0]);
+        //     };
+        //     $('.carousel2.carousel-slider2').carousel({
+        //         fullWidth: true,
+        //     });
+        // });
         </script>
         <!--  Scripts-->
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>

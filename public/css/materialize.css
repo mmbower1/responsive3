@@ -4373,7 +4373,7 @@ nav .sidenav-trigger i {
 }
 
 nav .brand-logo {
-	position: absolute;
+	/* position: absolute; */
 	color: #fff;
 	/* display: inline-block; */
 	font-size: 2.1rem;
@@ -8588,6 +8588,7 @@ input[type=range]::-ms-thumb {
 	position: absolute;
 	top: 0;
 	left: 0;
+	padding-top: 10px;
 }
 .carousel2.carousel-slider2 .carousel-item {
 	text-align: center;
