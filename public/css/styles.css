@@ -295,7 +295,7 @@ button {
 
 .videos-div {
 	align-items: center;
-	background-color: rgb(172, 171, 171);
+	/* background-color: rgb(172, 171, 171); */
 	display: flex;
 	flex-direction: column;
 	font-family: 'Questrial', sans-serif;
@@ -308,6 +308,21 @@ button {
 h6 {
 	text-decoration: underline;
 	text-align: center;
+}
+
+.video-title {
+	color: red;
+	font-family: 'Montserrat';
+	margin-top: 35px;
+	text-decoration: none;
+}
+
+.video-title:hover {
+	-webkit-transform: scale(1.2);
+}
+
+.youtube-views {
+	font-size: 27px;
 }
 
 /* .videos-body {
