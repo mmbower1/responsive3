@@ -2978,7 +2978,7 @@ ul.staggered-list li {
 }
 
 .page-footer {
-	padding-top: 20px;
+	/* padding-top: 20px; */
 	color: #fff;
 	background-color: #ee6e73;
 }
@@ -3355,7 +3355,8 @@ th {
 }
 
 .left-align {
-	text-align: left;
+	line-height: 20px;
+	text-align: center;
 }
 
 .right-align {
@@ -3515,6 +3516,7 @@ table span.badge {
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 20px;
+	padding-top: 100px
 }
 
 .row:after {
@@ -4646,9 +4648,9 @@ small {
 	font-size: 75%;
 }
 
-.light {
+/* .light {
 	font-weight: 300;
-}
+} */
 
 .thin {
 	font-weight: 200;
@@ -5045,6 +5047,22 @@ small {
 		min-width: 100%;
 		bottom: 0%;
 	}
+
+	.parallax-container {
+		margin-top: 30px;
+	}
+
+	#main-header {
+		font-size: 22px;
+	}
+
+	#name-home {
+		font-size: 40px;
+	}
+
+	/* .row, .center {
+		padding-top: 0;
+	} */
 }
 
 @media only screen and (min-width: 601px) and (max-width: 992px) {
@@ -7896,7 +7914,7 @@ input[type=range]::-ms-thumb {
 	opacity: 0;
 	height: 120vh;
 	background-color: rgba(0, 0, 0, 0.5);
-	z-index: 997;
+	/* z-index: 997; */
 	display: none;
 }
 

@@ -141,7 +141,11 @@ li,
 #main-header {
 	font-weight: 20px;
 	text-shadow: 2px 2px rgb(81, 81, 83);
-	margin-top: -20px;
+	margin-top: -100px;
+}
+
+#main-header, strong {
+	padding-bottom: 40px;
 }
 
 .modal {
@@ -166,6 +170,11 @@ li,
 #nbc-div .img {
 	width: 20em;
 	font-family: 'Montserrat';
+}
+
+nav {
+	position: fixed;
+	z-index: 10;
 }
 
 nav ul a,
@@ -215,12 +224,18 @@ p {
 	min-height: 380px;
 	zoom: 100em;
 	font-family: 'Montserrat';
+	padding-top: 80px;
 }
 
 .parallax-container,
 .section {
+	/* margin-top: 30px; */
 	width: 100%;
 	font-family: 'Montserrat';
+}
+
+.profile-pic {
+	margin-bottom: 1000px;
 }
 
 .screen {
@@ -302,6 +317,7 @@ button {
 	justify-content: center;
 	margin: 0;
 	max-height: 100vh;
+	/* padding-top: 100px; */
 }
 
 .videos-div,
@@ -310,15 +326,20 @@ h6 {
 	text-align: center;
 }
 
+.videos-nav {
+	margin-top: -35px
+}
+
 .video-title {
-	color: red;
 	font-family: 'Montserrat';
 	margin-top: 35px;
+	padding-top: 60px;
 	text-decoration: none;
 }
 
 .video-title:hover {
 	-webkit-transform: scale(1.2);
+	transition: all .1s ease-in;
 }
 
 .youtube-views {
@@ -333,7 +354,8 @@ h6 {
 @media only screen and (max-width: 992px) {
 	.parallax-container .section {
 		position: absolute;
-		top: 40%;
+		/* top: 40%; */
+		padding-bottom: 100px;
 	}
 	.parallax img {
 		max-height: 130%; /* or a little bit higher */
@@ -341,19 +363,40 @@ h6 {
 	#index-banner .section {
 		top: 10%;
 	}
+
+	#nav-teal-home {
+		height: 69px;
+		position: fixed;
+		top: 0;
+	}
+
+	#nav-teal-portfolio {
+		height: 69px;
+	}
+
 	.parallax img {
 		max-height: 170%;
 		/* or higher percentages. It's up to your taste */
 	}
+
+	.portfolio-nav {
+		margin-bottom: 100px;
+	}
 }
 
 @media only screen and (max-width: 600px) {
+
 	#index-banner .section {
 		top: 0;
 	}
 	.fas {
 		margin-top: 15px;
 	}
+
+	.parallax-container,
+.section {
+	padding-top: 50px;
+}
 	.screen {
 		/* margin-top: 10px; */
 		width: 90%;
